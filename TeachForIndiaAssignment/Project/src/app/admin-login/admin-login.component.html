@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+<div class="container">
+
+
+
+
+      <form class="border p-3" [formGroup]="loginForm" (ngSubmit)="loginSubmitted()">
+
+
+  <div class="row g-0">
+    <div class="col text-center p-2 mb-3">
+      <span class="fs-3"><h2>Admin Login</h2></span>
+    </div>
+  </div>
+  <div class="col mb-3">
+    <div class="col mb-3">
+      <div class="inputbox">
+        <ion-icon name="mail-outline"></ion-icon>
+      <input type="email" required class="form-control input-field" id="email" formControlName="logemail">
+      <label for="">Email</label>
+    </div>
+      <div class="form-text text-danger" style="color: red;" *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+        Email is required
+      </div>
+    </div>
+    <div class="col mb-1">
+      <div class="inputbox">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+      <input type="password" required class="form-control input-field" id="password" formControlName="logpassword">
+      <label for="">Password</label>
+      </div>
+      <div class="form-text text-danger" style="color: red;" *ngIf="Password.errors?.['required'] && (Password.dirty || Password.touched)">
+        Password is required
+      </div>
+    </div><br>
+    <div class="d-grid">
+    <div class="row">
+    <button type="submit"  class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button><br>
+  </div>
+  </div>
+
+
+  </div>
+
+</form>
+
+
+
+</div>
+</html>
+

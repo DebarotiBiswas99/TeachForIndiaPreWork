@@ -1,0 +1,31 @@
+<body>
+<div class="container">
+  <h2>Registered Users</h2>
+  <div class="header">
+    <p>Total Users: {{ users.length }}</p>
+    <button class="auto-allocate-btn" [disabled]="users.length < 20" [title]="users.length < 20 ? 'Auto generate possible only when users > 20' : null" routerLink="/allocations">Auto Allocate</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Location</th>
+        <th>Weekdays</th>
+        <th>Languages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.location }}</td>
+        <td>{{ user.weekdays.join(', ') }}</td>
+        <td>{{ user.languages.join(', ') }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>

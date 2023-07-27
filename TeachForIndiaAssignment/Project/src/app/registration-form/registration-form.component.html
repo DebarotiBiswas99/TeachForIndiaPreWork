@@ -1,0 +1,132 @@
+
+<html>
+  <a routerLink="/adminlogin">View Users</a>
+<div class="container">
+    <div class="form-box">
+
+
+      <form class="border p-3" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+
+  <div class="row g-0">
+    <div class="col text-center p-2 mb-3">
+      <span class="fs-3"><h2>Volunteer Registration</h2></span>
+    </div>
+  </div>
+  <div class="col mb-3">
+    <div class="col mb-4">
+      <div class="inputbox">
+      <input type="text" required class="form-control input-field" id="name" formControlName="name">
+      <label for="">Name</label>
+    </div>
+     <div id="warning" class="form-text text-danger" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">
+      Name is required
+    </div>
+    <div id="warning" class="form-text text-danger" *ngIf="Name.errors?.['minlength'] && (Name.touched || Name.dirty)">
+      Name is too short
+    </div>
+    <div id="warning" class="form-text text-danger"  *ngIf="Name.errors?.['pattern'] && (Name.touched || Name.dirty)">
+      Name should start with alphabet
+    </div>
+    </div>
+    <div class="col mb-4">
+      <div class="inputbox">
+      <input type="email" required class="form-control input-field" id="email" formControlName="email">
+      <label for="">Email</label>
+    </div>
+       <div id="warning" class="form-text text-danger"  *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)">
+        Email is required
+      </div>
+      <div id="warning" class="form-text text-danger"  *ngIf="Email.errors?.['email'] && (Email.dirty || Email.touched)">
+        Not a proper Email ID
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="inputbox">
+      <input type="text" required class="form-control input-field" id="phone" formControlName="phone">
+      <label for="">Phone</label>
+    </div>
+       <div id="warning" class="form-text text-danger" *ngIf="Phone.errors?.['required'] && (Phone.dirty || Phone.touched)">
+        Phone is required
+      </div>
+      <div id="warning" class="form-text text-danger" *ngIf="Phone.errors?.['pattern'] && (Phone.dirty || Phone.touched)">
+        Phone should be number
+      </div>
+      <div id="warning" class="form-text text-danger" *ngIf="Phone.errors?.['exactLength'] && (Phone.dirty || Phone.touched)">
+        Phone should have exactly 10 digits
+      </div>
+    </div>
+    <div class="col ps-3">
+      <div class="row">
+        <div class="col-2">
+          <div class="m-1"><label class="batch">Location</label></div>
+        </div>
+        <div class="col-10">
+          <select class="form-select" formControlName="location" id="dropdown">
+            <option value="" disabled selected>Select Location</option>
+            <option *ngFor="let location of locations" [value]="location">{{location}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-text text-danger" *ngIf="Location.errors?.['required']">
+      </div>
+  </div>
+
+  <div class="col ps-3">
+    <div class="row">
+      <div class="col-2">
+        <div class="m-1"><label class="batch">Weekdays</label></div>
+      </div>
+      <div class="col-10">
+        <div class="form-check" *ngFor="let weekday of weekdays">
+          <div class="checkbox-label-container">
+            <input class="form-check-input" type="checkbox" [value]="weekday" [id]="weekday"
+                  (change)="toggleSelection(weekday, weekdaysArray)">
+            <label [for]="weekday">{{weekday}}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="warning" class="form-text text-danger" *ngIf="weekdaysArray.errors?.['required']">
+      Weekdays are required.
+    </div>
+  </div>
+
+
+  <div class="col ps-3">
+    <div class="row">
+      <div class="col-2">
+        <div class="m-1"><label class="batch">Languages</label></div>
+      </div>
+      <div class="col-10">
+        <div class="form-check" *ngFor="let language of languages">
+          <div class="checkbox-label-container">
+          <input class="form-check-input" type="checkbox" [value]="language" [id]="language"
+                 (change)="toggleSelection(language, languagesArray)">
+          <label class="form-check-label" [for]="language">{{language}}</label>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div id="warning" class="form-text text-danger" *ngIf="languagesArray.errors?.['required']">
+      Language required.
+    </div>
+  </div>
+
+    <div class="d-grid">
+    <div class="row">
+    <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid">Submit</button>
+  </div>
+  </div>
+
+
+
+  </div>
+
+</form>
+
+</div>
+</div>
+
+
+</html>

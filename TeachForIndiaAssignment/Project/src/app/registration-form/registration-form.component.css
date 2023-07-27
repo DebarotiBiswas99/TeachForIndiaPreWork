@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+  font-family: 'poppins',sans-serif;
+}
+
+html, body {
+
+  margin: 0;
+  overflow-y: scroll;
+}
+
+a {
+  font-size: 1.2rem;
+  margin-left: 5vw;
+}
+
+h2{
+  font-size: 2em;
+  color: #0e7785;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.form-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#warning {
+  font-size: 0.8rem;
+  color: red;
+  padding-bottom: 1em;
+}
+
+.inputbox{
+  font-size: 1rem;
+  position: relative;
+  margin-left: 0vw;
+  margin-top: 1.4vh;
+  width: 28vw;
+  border-bottom: 0.1875rem solid #fff;
+}
+.inputbox label{
+  position: absolute;
+  top: 3vh;
+  left: 1vw;
+  transform: translateY(-50%);
+  color: #383737;
+  font-size: 1.2rem;
+  pointer-events: none;
+  transition: .5s;
+}
+.inputbox input {
+  width: 28vw;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding:0 1rem 0 1rem;
+  color: #333030;
+}
+input:focus ~ label,
+  input:valid ~ label{
+  top: -0.6rem;
+  }
+
+   .col input{
+    border: none;
+    border-bottom: 0.0625rem solid #ccc;
+    background: transparent;
+    outline: none;
+    height: 6.5vh;
+    color: #555;
+    font-size: 1.1rem;
+  }
+
+
+input[type="email"],
+input[type="text"],
+input[type="phone"] {
+  display: block;
+  width: 100%;
+  padding: 100%;
+  margin-bottom: 3%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="phone"]:focus {
+  outline: none;
+  border-color: #1E90FF;
+}
+
+.checkbox-label-container {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  margin-bottom: 0px;
+}
+
+.checkbox-label-container input {
+  margin-right: 5px;
+}
+
+.batch {
+  margin-top: 2rem;
+  margin-left: 0.9rem;
+  font-size: 1.2rem;
+}
+
+.col.ps-3 {
+  margin-top: 10px;
+}
+
+#dropdown {
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+#dropdown::after {
+  content: "\f107";
+  font-family: "Font Awesome";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #333;
+}
+
+
+#dropdown option {
+  padding: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+}
+
+.btn{
+  margin-top: 1rem;
+  border-radius: .1rem;
+  background: #0e7785;
+  color: #292222;
+  padding: .8rem 10rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  align-self: center;
+ }
+
+.btn:disabled {
+  background-color: lightgray;
+  color: #000;
+  cursor: default;
+  opacity: 0.5;
+}

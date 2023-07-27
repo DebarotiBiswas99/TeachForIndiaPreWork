@@ -1,0 +1,27 @@
+<!-- classrooms.component.html -->
+
+<div class="container">
+  <h2>Classrooms</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Classroom ID</th>
+        <th>Capacity</th>
+        <th>Requirement</th>
+        <th>Subjects</th>
+        <th>Language Requirement</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let classroom of classrooms">
+        <td>{{ classroom.classroomID }}</td>
+        <td>{{ classroom.capacity }}</td>
+        <td>{{ classroom.requirement }}</td>
+        <td>{{ classroom.subjects.join(', ') }}</td>
+        <td>{{ classroom.languageRequirement.join(', ') }}</td>
+        <td>{{ classroom.location }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
