@@ -28,7 +28,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-.auto-allocate-btn {
+.viewlist-btn {
   padding: 8px 16px;
   background: #40c5d6;
   color: #292222;
@@ -38,8 +38,12 @@ h2 {
 }
 
 .auto-allocate-btn {
-  position: absolute;
-  right: 300px;
+  padding: 8px 16px;
+  background: #40c5d6;
+  color: #292222;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .auto-allocate-btn:disabled {
