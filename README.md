@@ -16,8 +16,6 @@ mongodb+srv://debarotibiswas1999:tp2v8sA5cRrmvXpG@mycluster.jesrgy5.mongodb.net/
 STEP 1:
 Download the project from Github URL or use Github Desktop: https://github.com/DebarotiBiswas99/TeachForIndiaPreWork
 
-OR,
-Download the zip file from the Google Drive folder.
 
 STEP 2:
 Unzip the folder, open VS Code and go to the main directory of the assignment ie: TeachForIndiaAssignment.
@@ -29,8 +27,11 @@ STEP 3:
 Open a Command Prompt Terminal in there and navigate to the Project directory and run the following commands one by one:
 
 npm install -g @angular/cli
+
 npm install
+
 npm update
+
 npm start
 
 STEP 4:
