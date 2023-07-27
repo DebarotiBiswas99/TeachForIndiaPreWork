@@ -7,7 +7,7 @@ import { ClassroomsComponent } from './classrooms/classrooms.component';
 import { AllocationsComponent } from './allocations/allocations.component';
 
 const routes: Routes = [
-  { path: 'register', component: RegistrationFormComponent },
+  { path: '', component: RegistrationFormComponent },
   { path: 'adminlogin', component: AdminLoginComponent},
   { path: 'viewlist', component:ViewlistComponent },
   { path: 'classrooms', component:ClassroomsComponent},
